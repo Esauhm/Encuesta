@@ -69,7 +69,7 @@
 <!-- Contenido de la página de inicio de sesión -->
     <div class="login-form mt-5">
         <h2 class="text-center">Iniciar Sesión</h2>
-        <form action="../LabTienda/login" method="post">
+        <form action="../Encuesta_lab01/login" method="post">
             <!-- Campos del formulario -->
             <div class="form-group">
                 <!-- comment<label for="usuario">Usuario:</label> -->

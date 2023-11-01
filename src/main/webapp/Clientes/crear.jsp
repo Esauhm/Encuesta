@@ -70,8 +70,8 @@
 </head>
 <body>
         <div class="registration-form mt-5">
-            <h2 class="text-center">Registrarse</h2>
-            <form action="../Encuesta_lab01/registro" method="post">
+            <h2 class="text-center">Crear cliente</h2>
+            <form action="../LabTienda/registro" method="post">
                 <!-- Campos del formulario -->
                 <div class="row">
                     <div class="col-md-6">
@@ -136,13 +136,8 @@
                     <input type="password" class="form-control" id="clave" name="clave" required>
                 </div>
                 <div class="centered-buttons text-center">
-                    <button type="submit" class="btn btn-primary btn-register mb-2">Registrarse</button>
-                      <div class="text-body-secondary">
-                          <hr>
-                          <span>¿Ya tienes una cuenta?</span>
-                   
-                      </div>
-                    <a href="login" >Iniciar sesión</a><!<!-- class="btn btn-secondary btn-login -->
+                    <button type="submit" class="btn btn-primary btn-register mb-2">Guardar</button>
+                      
                 </div>
             </form>
         </div>
