@@ -50,7 +50,7 @@
         </tr>
         <tr>
             <th>Rol:</th>
-            <td>${clientes.getRolid() == 1 ? 'Cliente' : 'Administrador'}</td>
+            <td>${clientes.getRolid() == 2 ? 'Cliente' : 'Administrador'}</td>
         </tr>
     </table>
         

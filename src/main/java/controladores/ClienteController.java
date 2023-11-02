@@ -146,7 +146,7 @@ public class ClienteController extends HttpServlet {
         HttpSession session = request.getSession();
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
-        if (cliente != null && "Cliente".equalsIgnoreCase(cliente.getNombre_rol())) {
+        if (cliente != null ) {
              
         
             int valor = cliente.getIdCliente();

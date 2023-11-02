@@ -162,6 +162,8 @@ public boolean actualizarCliente(Cliente cliente) {
            return false;
         }
     }
+
+
  public boolean eliminarClientes(int idcliente) {
         String sql = "DELETE FROM cliente WHERE idCliente = ?";
 

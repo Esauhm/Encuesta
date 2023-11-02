@@ -148,7 +148,7 @@
     <!-- Navbar con paleta de colores suaves -->
     <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="/Encuesta_lab01" style="margin-left: 10px;">
-        <img src="https://img.freepik.com/vector-premium/vector-dibujos-animados-mascota-compras-leon_193274-80034.jpg?w=2000" alt="Logo de la Tienda" class="logo">
+        <img src="https://previews.123rf.com/images/lineartestpilot/lineartestpilot1802/lineartestpilot180278994/95592089-gato-de-dibujos-animados-aburrido-tomando-encuesta-ilustraci%C3%B3n-vectorial.jpg" alt="Logo de la Tienda" class="logo">
     </a>
     <a class="lfooter2">Encuestify</a>
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,10 +163,10 @@
                 <c:when test="${sessionScope.cliente.nombre_rol eq 'Admin'}">
                     <!-- Código para el rol 1 -->
                     <li class="nav-item">
-                        <a class="nav-link" href="proveedores">Resumen de Encuestas</a>
+                        <a class="nav-link" href="graficos">Resumen de Encuestas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="productos">Consultar Encuestas</a>
+                        <a class="nav-link" href="ConsultarEnc">Consultar Encuestas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="clientes">Clientes</a>
@@ -180,7 +180,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="pedido">Ver Encuesta</a>
+                        <a class="nav-link" href="verEncuesta">Ver Encuesta</a>
                     </li>
                 </c:when>
             </c:choose>

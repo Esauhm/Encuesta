@@ -5,12 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Formulario de Captura</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+<title>Ver Encuesta</title>
+<%@ include file="/Layout/header.jsp" %>
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Responda el siguiente formalario</h2>
