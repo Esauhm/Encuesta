@@ -146,8 +146,8 @@
                       <div class="form-group">
                     <label for="rol">Rol</label>
                     <select class="form-control" id="rol" name="rol">
-                        <option value="1" ${clientes.getRolid() == '1' ? 'selected' : ''}>Cliente</option>
-                        <option value="2" ${clientes.getRolid() == '2' ? 'selected' : ''}>Administrador</option>                     
+                        <option value="2" ${clientes.getRolid() == '2' ? 'selected' : ''}>Cliente</option>
+                        <option value="1" ${clientes.getRolid() == '1' ? 'selected' : ''}>Administrador</option>                     
                 </select>
                 </div>
                 <div class="centered-buttons text-center">

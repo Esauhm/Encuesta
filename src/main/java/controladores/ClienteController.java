@@ -304,7 +304,7 @@ public class ClienteController extends HttpServlet {
             String direccion = request.getParameter("dirrecion"); // Obtener el valor del campo direccion del formulario
             String telefono = request.getParameter("telefono"); // Obtener el valor del campo telefono del formulario
             String pais = request.getParameter("pais"); 
-            int rol = 1;
+            int rol = 2;
         // Hasheamos la contraseña antes de guardarla en la base de datos
         String hashedContrasena = hashContrasena(contrasena);
 
