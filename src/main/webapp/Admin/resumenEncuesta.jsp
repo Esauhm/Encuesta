@@ -26,7 +26,7 @@
 <div class="container card">
     <div class="card mb-4">
     <div class="card-header">
-        <h2 class="mb-4 mt-5">1. Sexo de las personas</h2>
+        <h2 class="mb-4 mt-5">1. Sexo de las personas encuestadas</h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -57,7 +57,7 @@
 
 <div class="card mb-4">
     <div class="card-header">
-        <h2 class="mb-4 mt-5">2. Deporte de las personas</h2>
+        <h2 class="mb-4 mt-5">2. Deportes favoritos de los encuestados</h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -85,7 +85,73 @@
         </div>
     </div>
 </div>
+    
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="mb-4 mt-5">3. Nivel de estudio de los encuestados</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Gráfico de barras para deporte -->
+                <div class="col-4">
+                    <div class="text-center" style="width: 100%; height: 350px; text-align: center;">
+                        <h3>Distribución de nivel de estudio</h3>
+                        <canvas id="graficoBarrasEstudio"></canvas>
+                    </div>
+                </div>
+                <!-- Gráfico de pastel para deporte -->
+                <div class="col-4 mx-auto">
+                    <div class="text-center" style="width: 70%; height: 350px; text-align: center; margin-left: 100px;">
+                        <h3>Distribución de nivel de estudio</h3>
+                        <canvas id="graficoPastelEstudio"></canvas>
+                    </div>
+                </div>
+                <!-- Gráfico de línea para deporte -->
+                <div class="col-4">
+                    <div class="text-center" style="width: 100%; height: 350px; text-align: center;">
+                        <h3>Distribución de nivel de estudio</h3>
+                        <canvas id="graficoLineaEstudio"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="mb-4 mt-5">4. Temas favoritos de los encuestados</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Gráfico de barras para deporte -->
+                <div class="col-4">
+                    <div class="text-center" style="width: 100%; height: 350px; text-align: center;">
+                        <h3>Distribución de temas favoritos</h3>
+                        <canvas id="graficoBarrasTemas"></canvas>
+                    </div>
+                </div>
+                <!-- Gráfico de pastel para deporte -->
+                <div class="col-4 mx-auto">
+                    <div class="text-center" style="width: 70%; height: 350px; text-align: center; margin-left: 100px;">
+                        <h3>Distribución de temas favoritos</h3>
+                        <canvas id="graficoPastelTemas"></canvas>
+                    </div>
+                </div>
+                <!-- Gráfico de línea para deporte -->
+                <div class="col-4">
+                    <div class="text-center" style="width: 100%; height: 350px; text-align: center;">
+                        <h3>Distribución de temas favoritos</h3>
+                        <canvas id="graficoLineaTemas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
 
 
 
@@ -217,9 +283,9 @@ for (var i = 0; i < encuestasJSON.length; i++) {
         baloncesto++;
     }else if (deporte === "jockey") {
         jockey++;
-    }else if (beisbol === "beisbol") {
+    }else if (deporte === "beisbol") {
         jockey++;
-    }else if (golf === "golf") {
+    }else if (deporte === "golf") {
         jockey++;
     }
      
@@ -294,6 +360,221 @@ var graficoLinea = new Chart(ctxLine, {
         datasets: [{
             label: 'Deportes',
             data: [futbol, baloncesto, jockey, beisbol, golf],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+//nivel de estudio -------------------------
+
+
+// Inicializar contadores para sexos
+var basico = 0;
+var intermedio = 0;
+var superior = 0;
+
+
+// Contar cuántas respuestas corresponden a cada sexo
+for (var i = 0; i < encuestasJSON.length; i++) {
+    var estudio = encuestasJSON[i]['nivel_estudio']; // Accede a la propiedad usando notación de corchetes
+    if (estudio === "basico") {
+        basico++;
+    } else if (estudio === "intermedio") {
+        intermedio++;
+    }else if (estudio === "superior") {
+        superior++;
+    }
+     
+}
+
+// Crear un gráfico de barras para la distribución de sexos
+var ctxBarras = document.getElementById('graficoBarrasEstudio').getContext('2d');
+var graficoBarras = new Chart(ctxBarras, {
+    type: 'bar',
+    data: {
+        labels: ['basico', 'intermedio', 'superior'],
+        datasets: [{
+            label: 'Nivel de estudio',
+            data: [basico, intermedio, superior],
+           backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)', // Nuevo color
+                'rgba(255, 159, 64, 0.2)',  // Nuevo color
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)', // Nuevo color
+                'rgba(255, 159, 64, 1)',  // Nuevo color
+            ],
+            borderWidth: 2
+        }]
+    }
+});
+
+// Crear un gráfico de pastel para la distribución de sexos
+var ctxPastel2 = document.getElementById('graficoPastelEstudio').getContext('2d');
+var graficoPastel = new Chart(ctxPastel2, {
+    type: 'pie',
+    data: {
+        labels: ['basico', 'intermedio', 'superior'],
+        datasets: [{
+            label: 'nivel de estudio',
+            data: [basico, intermedio, superior],
+           backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)', // Nuevo color
+                'rgba(255, 159, 64, 0.2)',  // Nuevo color
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)', // Nuevo color
+                'rgba(255, 159, 64, 1)',  // Nuevo color
+            ],
+            borderWidth: 2
+        }]
+    }
+});
+
+// Crear un gráfico de líneas para la distribución de deportes
+var ctxLine = document.getElementById('graficoLineaEstudio').getContext('2d');
+var graficoLinea = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+         labels: ['basico', 'intermedio', 'superior'],
+        datasets: [{
+            label: 'nivel de estudio',
+           data: [basico, intermedio, superior],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+// Inicializar contadores para sexos
+var television = 0;
+var cocina = 0;
+var tecnologia = 0;
+var musica = 0;
+var deportes = 0;
+
+
+// Contar cuántas respuestas corresponden a cada sexo
+for (var i = 0; i < encuestasJSON.length; i++) {
+    var tema = encuestasJSON[i]['tema_favorito']; // Accede a la propiedad usando notación de corchetes
+    if (tema === "television") {
+        television++;
+    } else if (tema === "cocina") {
+        cocina++;
+    }else if (tema === "tecnologia") {
+        tecnologia++;
+    }else if (tema === "musica") {
+        musica++;
+    }else if (tema === "deportes") {
+        deportes++;
+    }
+     
+}
+
+
+// Crear un gráfico de barras para la distribución de sexos
+var ctxBarras = document.getElementById('graficoBarrasTemas').getContext('2d');
+var graficoBarras = new Chart(ctxBarras, {
+    type: 'bar',
+    data: {
+        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+        datasets: [{
+            label: 'Temas Favorito',
+            data: [television, cocina, tecnologia, musica, deportes],
+           backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)', // Nuevo color
+                'rgba(255, 159, 64, 0.2)',  // Nuevo color
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)', // Nuevo color
+                'rgba(255, 159, 64, 1)',  // Nuevo color
+            ],
+            borderWidth: 2
+        }]
+    }
+});
+
+// Crear un gráfico de pastel para la distribución de sexos
+var ctxPastel2 = document.getElementById('graficoPastelTemas').getContext('2d');
+var graficoPastel = new Chart(ctxPastel2, {
+    type: 'pie',
+    data: {
+        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+        datasets: [{
+            label: 'Temas Favorito',
+            data: [television, cocina, tecnologia, musica, deportes],
+           backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)', // Nuevo color
+                'rgba(255, 159, 64, 0.2)',  // Nuevo color
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)', // Nuevo color
+                'rgba(255, 159, 64, 1)',  // Nuevo color
+            ],
+            borderWidth: 2
+        }]
+    }
+});
+
+// Crear un gráfico de líneas para la distribución de deportes
+var ctxLine = document.getElementById('graficoLineaTemas').getContext('2d');
+var graficoLinea = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+         labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+        datasets: [{
+            label: 'nivel de estudio',
+           data: [television, cocina, tecnologia, musica, deportes],
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 2

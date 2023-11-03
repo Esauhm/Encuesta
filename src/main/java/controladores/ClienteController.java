@@ -212,7 +212,7 @@ public class ClienteController extends HttpServlet {
        HttpSession session = request.getSession();
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
-        if (cliente != null && "admin".equalsIgnoreCase(cliente.getNombre_rol())) {
+        if (cliente != null && "Admin".equalsIgnoreCase(cliente.getNombre_rol())) {
              String idCliente = request.getParameter("id");
 
             // Verificar si el ID es válido (puedes agregar validaciones adicionales)
@@ -401,7 +401,7 @@ public class ClienteController extends HttpServlet {
         HttpSession session = request.getSession();
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
-        if (cliente != null && "admin".equalsIgnoreCase(cliente.getNombre_rol())) {
+        if (cliente != null ) {
             // Obtener los parámetros enviados desde el formulario
            String nombre = request.getParameter("nombres");
             String apellidos = request.getParameter("apellidos");
