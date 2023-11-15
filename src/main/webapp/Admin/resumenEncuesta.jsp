@@ -21,6 +21,13 @@
     background-color: #f8f9fa; /* Cambia el color de fondo según tus preferencias */
     transition: background-color 0.3s ease-in-out;
 }
+
+.card-header {
+    background: url("https://img.freepik.com/vector-premium/diseno-fondo-holograma-color-pastel-abstracto-horizontal_29865-3302.jpg") center/cover no-repeat;
+/*    color: white;
+    text-align: center;*/
+    padding: 22px;
+}
 </style>
 
 <div class="container card">
@@ -195,10 +202,10 @@ var ctxBarras = document.getElementById('graficoBarras').getContext('2d');
 var graficoBarras = new Chart(ctxBarras, {
     type: 'bar',
     data: {
-        labels: ['Hombres', 'Mujeres', 'Otros'],
+        labels: ['Hombres', 'Mujeres'],
         datasets: [{
             label: 'Distribución de Sexo',
-            data: [hombres, mujeres, otros],
+            data: [hombres, mujeres],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -221,9 +228,9 @@ var ctxPastel = document.getElementById('graficoPastel').getContext('2d');
 var graficoPastel = new Chart(ctxPastel, {
     type: 'pie',
     data: {
-        labels: ['Hombres', 'Mujeres', 'Otros'],
+        labels: ['Hombres', 'Mujeres'],
         datasets: [{
-            data: [hombres, mujeres, otros],
+            data: [hombres, mujeres],
             backgroundColor: [
                'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -246,10 +253,10 @@ var ctxLinea = document.getElementById('graficoLinea').getContext('2d');
 var graficoLinea = new Chart(ctxLinea, {
     type: 'line',
     data: {
-        labels: ['Hombres', 'Mujeres', 'Otros'],
+        labels: ['Hombres', 'Mujeres'],
         datasets: [{
             label: 'Distribución de Sexo (Línea)',
-            data: [hombres, mujeres, otros],
+            data: [hombres, mujeres],
             fill: false, // No rellenes la línea
             borderColor: 'rgba(75, 192, 192, 1)', // Color de la línea
             borderWidth: 2
@@ -499,7 +506,7 @@ for (var i = 0; i < encuestasJSON.length; i++) {
         tecnologia++;
     }else if (tema === "musica") {
         musica++;
-    }else if (tema === "deportes") {
+    }else if (tema === "deporte") {
         deportes++;
     }
      
@@ -511,7 +518,7 @@ var ctxBarras = document.getElementById('graficoBarrasTemas').getContext('2d');
 var graficoBarras = new Chart(ctxBarras, {
     type: 'bar',
     data: {
-        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deporte'],
         datasets: [{
             label: 'Temas Favorito',
             data: [television, cocina, tecnologia, musica, deportes],
@@ -541,7 +548,7 @@ var ctxPastel2 = document.getElementById('graficoPastelTemas').getContext('2d');
 var graficoPastel = new Chart(ctxPastel2, {
     type: 'pie',
     data: {
-        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+        labels: ['television', 'cocina', 'tecnologia', 'musica', 'deporte'],
         datasets: [{
             label: 'Temas Favorito',
             data: [television, cocina, tecnologia, musica, deportes],
@@ -571,7 +578,7 @@ var ctxLine = document.getElementById('graficoLineaTemas').getContext('2d');
 var graficoLinea = new Chart(ctxLine, {
     type: 'line',
     data: {
-         labels: ['television', 'cocina', 'tecnologia', 'musica', 'deportes'],
+         labels: ['television', 'cocina', 'tecnologia', 'musica', 'deporte'],
         datasets: [{
             label: 'nivel de estudio',
            data: [television, cocina, tecnologia, musica, deportes],

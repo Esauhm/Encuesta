@@ -24,6 +24,9 @@
    <!-- SweetAlert2 CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oCE1HRaxdUz+DhqFRRgtcsls4U6TG3MWzUzpgAEaY8eUn57fj5cIK83AgiNajz6b" crossorigin="anonymous">
+
 
     
     <!-- Agrega las bibliotecas de DataTables -->

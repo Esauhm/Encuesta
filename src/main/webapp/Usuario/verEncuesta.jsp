@@ -18,6 +18,14 @@
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
+        
+        .card-header {
+            background: url("https://img.freepik.com/fotos-premium/horizontal-oscuro-1-negro-grunge-textura-cemento-showroom-o-muro-hormigon-banner-estudio-fondo-blanco_28629-2065.jpg?w=360") center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
 
         .table {
             width: 100%;
@@ -36,7 +44,7 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h2 class="text-center">Datos de la Encuesta</h2>
+                <h2 class="text-center" style="font-size: 40px;">Datos de la Encuesta</h2>
             </div>
             <div class="card-body">
                 <table class="table table-bordered">

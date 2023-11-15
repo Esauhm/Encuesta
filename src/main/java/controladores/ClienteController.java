@@ -254,7 +254,7 @@ public class ClienteController extends HttpServlet {
        HttpSession session = request.getSession();
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
-        if (cliente != null && "Cliente".equalsIgnoreCase(cliente.getNombre_rol())) {
+        if (cliente != null ) {
              String idCliente = request.getParameter("id");
 
             // Verificar si el ID es válido (puedes agregar validaciones adicionales)
